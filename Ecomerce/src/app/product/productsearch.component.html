@@ -1,0 +1,22 @@
+    <h4><b>Search form</b></h4>
+    <input type="text" [(ngModel)]='searchTerm'/>
+    <input type="button" value="Search" (click)="onSearch()">
+    <br/>
+    <br/>
+    <table border="2">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+         <th>Price</th>
+        <th>Category</th>
+            </tr>
+            <ng-container *ngIf="searchTerm1">
+            <tr *ngFor="let product of products | product:searchTerm">
+                <td>{{product.id}}</td>
+                <td>{{product.name}}</td>
+                <td>{{product.price}}</td>
+                <td>{{product.category}}</td>
+            </tr>
+            </ng-container>
+</table>
+    
